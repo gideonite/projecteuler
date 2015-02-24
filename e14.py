@@ -13,11 +13,13 @@ def make_seq(seq, dict):
     n = seq[0]
 
     if n == 1:
+        # update dictionary     todo: factor out these two lines =(
         for i in seq:
             dict[i] = seq.index(i) + 1
     elif dict.has_key(n):
         # a sequence that has already been seen
         _len = dict[n]
+        # update dictionary
         for i in seq:
             dict[i] = seq.index(i) + _len
     else:
